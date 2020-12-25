@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #add {
+            display: flex;
+            flex-wrap: wrap;
+            width: 380px;
+        }
+
+        #add p {
+            padding: 5px 0;
+            margin: 0;
+        }
+
+        #table p {
+            margin: 7px 0;
+        }
+    </style>
+</head>
+
+<body onload="styleLoad()">
+    <article>
+        <p>Alphabet</p>
+        <section id="table">
+            <p> A B C D E F G </p>
+            <p>come on out and play with me.</p>
+            <p>H I J </p>
+            <p>come and play.</p>
+            <p>K L M </p>
+            <p>come with them. </p>
+            <p>N O P </p>
+            <p>near the tree. </p>
+            <p>Q R S T U V </p>
+            <p>Oh, how happy we will be. </p>
+            <p>W X Y Z </p>
+            <p>Lot's of fun for you and me. </p>
+        </section>
+        <button onclick="alpha()">Упорядочить</button>
+        <div id="add"></div>
+    </article>
+
+    <script>
+
+        function styleLoad() {
+            let newStyle = document.getElementsByTagName('p');
+            let sameStyle = document.querySelectorAll('section > p:nth-child(odd)');
+
+            for (let p of newStyle) {
+                p.style.border = '1px solid #000';
+                p.style.background = '#ac21ff'
+                p.style.color = '#12ff11';
+                p.style.fontSize = '24px';
+                p.style.fontFamily = 'BIG JOHN, sans-serif'
+            }
+            for (let elem of sameStyle) {
+                elem.style.background = '#ff12ca';
+            }
+        }
+
+
+
+        function alpha() {
+            let alph = document.querySelectorAll('section > p:nth-child(odd)');
+            for (let elem of alph) {
+                add.innerHTML += `<p>${elem.innerHTML}</p> &nbsp`;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
